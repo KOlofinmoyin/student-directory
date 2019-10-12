@@ -22,8 +22,10 @@ end
 def print(students)
   i = 1
   students.each do |student|
+    if student[:name].start_with?('p')
     puts "#{i}. #{student[:name]} (#{student[:cohort]} cohort)"
     i += 1
+    end
   end
 end
 
