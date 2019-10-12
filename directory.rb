@@ -22,7 +22,7 @@ end
 def print(students)
   i = 1
   students.each do |student|
-    if student[:name].start_with?('p')
+    if student[:name].start_with?('p') and student[:name].length < 12 
     puts "#{i}. #{student[:name]} (#{student[:cohort]} cohort)"
     i += 1
     end
