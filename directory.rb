@@ -21,7 +21,8 @@ end
 
 def print(students)
   i = 1
-  students.each do |student|
+  until students.empty?
+  student = students.pop
     if student[:name].start_with?('p') and student[:name].length < 12 
     puts "#{i}. #{student[:name]} (#{student[:cohort]} cohort)"
     i += 1
