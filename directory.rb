@@ -20,8 +20,10 @@ def print_header
 end
 
 def print(students)
+  i = 1
   students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
+    puts "#{i}. #{student[:name]} (#{student[:cohort]} cohort)"
+    i += 1
   end
 end
 
