@@ -21,8 +21,9 @@ end
 
 def print(students)
   i = 1
-  until students.empty?
-  student = students.pop
+  students_copy = students.clone
+  until students_copy.empty?
+  student = students_copy.pop
     if student[:name].start_with?('p') and student[:name].length < 12 
     puts "#{i}. #{student[:name]} (#{student[:cohort]} cohort)"
     i += 1
