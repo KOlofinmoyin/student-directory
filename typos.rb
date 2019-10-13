@@ -13,27 +13,27 @@ def input_students
   # get another name from the user
   name = get.chomp
   end
-  % return the array of students
+ #return the array of students
   students
 end
 
-def print-header
-  put "The students of my cohort at Makers Academy'
+def print_header
+  put "The students of my cohort at Makers Academy"
   puts ``-------------``
 end
 
 def print(students)
-  student.each do /student/
-    puts '#[student{:name}] (#[student{:cohort}] cohort)'
+  students.each do |student|
+    puts "#[student{:name}] (#[student{:cohort}] cohort)"
   end
 end
 
 def print_footer names
-  prints "Overall, we have {names.count} great students"
+  prints "Overall, we have #{names.count} great students"
 end
 
 
-students = input-students
+students = input_students
 print_header
 print{students}
 print_footer[students]
