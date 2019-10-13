@@ -1,17 +1,17 @@
 
 #first we print the list of students
 students = [
-     {name: "Dr. Hannibal Lecter", cohort: :november},
-     {name: "Nurse Ratched", cohort: :november},
-     {name: "Darth Vader", cohort: :november},
-     {name: "Michael Corleone", cohort: :november},
-     {name: "Alex DeLarge", cohort: :november},
-     {name: "The Wicked Witch of the West", cohort: :november},
-     {name: "Teminator", cohort: :november},
-     {name: "Freddy Krueger", cohort: :november},
-     {name: "The Joker", cohort: :november},
-     {name: "Joffrey Baratheon", cohort: :november},
-     {name: "Norman Bates", cohort: :november},
+     {name: "Dr. Hannibal Lecter", cohort: :november, hobbies: "swimming", country_of_birth: "Germany", height: "6.0"},
+     {name: "Nurse Ratched", cohort: :november, hobbies: "swimming", country_of_birth: "Germany", height: "6.0"},
+     {name: "Darth Vader", cohort: :november, hobbies: "swimming", country_of_birth: "Germany", height: "6.0"},
+     {name: "Michael Corleone", cohort: :november, hobbies: "swimming", country_of_birth: "Germany", height: "6.0"},
+     {name: "Alex DeLarge", cohort: :november, hobbies: "swimming", country_of_birth: "Germany", height: "6.0"},
+     {name: "The Wicked Witch of the West", cohort: :november, hobbies: "swimming", country_of_birth: "Germany", height: "6.0"},
+     {name: "Teminator", cohort: :november, hobbies: "swimming", country_of_birth: "Germany", height: "6.0"},
+     {name: "Freddy Krueger", cohort: :november, hobbies: "swimming", country_of_birth: "Germany", height: "6.0"},
+     {name: "The Joker", cohort: :november, hobbies: "swimming", country_of_birth: "Germany", height: "6.0"},
+     {name: "Joffrey Baratheon", cohort: :november, hobbies: "swimming", country_of_birth: "Germany", height: "6.0"},
+     {name: "Norman Bates", cohort: :november, hobbies: "swimming", country_of_birth: "Germany", height: "6.0"},
 ]
 
 def print_header
@@ -25,7 +25,7 @@ def print(students)
   until students_copy.empty?
   student = students_copy.pop
     if student[:name].start_with?('p') and student[:name].length < 12 
-    puts "#{i}. #{student[:name]} (#{student[:cohort]} cohort)"
+    puts "#{i}. #{student[:name]} (#{student[:cohort]} cohort) #{student[:hobbies]} #{student[:country_of_birth]} #{student[:height]}"
     i += 1
     end
   end
@@ -41,7 +41,7 @@ def input_students
   # while the name is not empty, repeat this code.
   while !name.empty? do
       #add the student hash to the array
-      students << {name: name, cohort: :november}
+      students << {name: name, cohort: :november, hobbies: "swimming", country_of_birth: "Germany", height: "6.0"}
       puts "Now we have #{students.count} students"
       # get another name from the user
       name = gets.chomp
