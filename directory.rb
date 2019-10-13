@@ -52,10 +52,10 @@ def input_students
   # create an empty array
   students = []
   #gets the first name
-  name = gets.chomp
+  name = gets.delete!("\n")
 
   puts "Please enter the names of the student cohort"
-  cohort = gets.chomp
+  cohort = gets.delete!("\n")
 
       if cohort.empty? or !cohort.is_a? String
       cohort = "january"
@@ -73,10 +73,10 @@ def input_students
 
       # get another name from the user
     puts "\nPlease enter the names of the students"
-      name = gets.chomp
+      name = gets.delete!("\n")
 
       puts "Please enter the names of the student cohort"
-      cohort = gets.chomp
+      cohort = gets.delete!("\n")
       cohort.to_sym
 
   
