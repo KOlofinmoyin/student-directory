@@ -11,7 +11,7 @@ def input_students
   students = {name: name, cohort: :november}
   puts "Now we have #{students.count} students"
   # get another name from the user
-  name = get.chomp
+  name = gets.chomp
   end
  #return the array of students
   students
