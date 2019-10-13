@@ -15,24 +15,38 @@ students = [
 ]
 
 def print_header
-  puts "The students of Villains Academy"
+  puts "The students of Makers Academy"
   puts "-------------"
 end
 
 def print(students)
   i = 1
-  linewidth = 5
-  students_copy = students.clone
-  until students_copy.empty?
-  student = students_copy.pop
-    if student[:name].start_with?('p') and student[:name].length < 12 
-    puts ("#{i}. #{student[:name]} (#{student[:cohort]} cohort) #{student[:hobbies]} #{student[:country_of_birth]} #{student[:height].center(4,"i")}")
-    i += 1
+
+    group_by_cohort = []
+    students.each { |student|
+    group_by_cohort.push(student[:cohort])
+    }
+    group_by_cohort = group_by_cohort.uniq
+  
+    group_by_cohort.each{ |group|
+    puts group
+    students.each { |student|
+    if student[:cohort] == group
+      if student[:name].start_with?('p') and student[:name].length < 12 
+      puts ("#{i}. #{student[:name]} (#{student[:cohort]} cohort) #{student[:hobbies]} #{student[:country_of_birth]} #{student[:height].center(4,"i")}")
+      i += 1
+      end
     end
-  end
+}#  end
+}#end
 end
 
 def input_students
+  name = ""
+  cohort = ""
+  students = []
+
+
   puts "Please enter the names of the students"
   
   # create an empty array
@@ -42,23 +56,46 @@ def input_students
 
   puts "Please enter the names of the student cohort"
   cohort = gets.chomp
-  
-  puts "To finish, just hit return twice"
+
+      if cohort.empty? or !cohort.is_a? String
+      cohort = "january"
+      end
+      puts "To finish, just hit return twice"
   
   # while the name is not empty, repeat this code.
-  while !name.empty? do
+  while true do
+    
+      
       #add the student hash to the array
+      
       students << {name: name, cohort: cohort, hobbies: "swimming", country_of_birth: "Germany", height: "6.0"}
       puts "Now we have #{students.count} students"
+
       # get another name from the user
+    puts "\nPlease enter the names of the students"
       name = gets.chomp
+
+      puts "Please enter the names of the student cohort"
+      cohort = gets.chomp
+      cohort.to_sym
+
+  
+        if name.empty?
+          break
+        end
   end
   #return the array of students
   students
 end
 
 def print_footer(names)
-  puts "Overall, we have #{names.count} great students"
+  if names.count > 1
+    puts "Overall, we have #{names.count} great students\n"
+    puts ""
+  elsif names.count == 1
+    puts "Overall, we have #{names.count} great student"
+    puts ""
+  end
 end
 
 students = input_students
