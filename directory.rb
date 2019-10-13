@@ -21,11 +21,12 @@ end
 
 def print(students)
   i = 1
+  linewidth = 5
   students_copy = students.clone
   until students_copy.empty?
   student = students_copy.pop
     if student[:name].start_with?('p') and student[:name].length < 12 
-    puts "#{i}. #{student[:name]} (#{student[:cohort]} cohort) #{student[:hobbies]} #{student[:country_of_birth]} #{student[:height]}"
+    puts ("#{i}. #{student[:name]} (#{student[:cohort]} cohort) #{student[:hobbies]} #{student[:country_of_birth]} #{student[:height].center(4,"i")}")
     i += 1
     end
   end
