@@ -27,8 +27,10 @@ def print_header
 end
 
 def print(students)
-  students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
+  students.each do |student, cohort|
+    hash = Hash.new()
+    hash = student
+    puts "#{student} (#{cohort} cohort)"
   end
 end
 
