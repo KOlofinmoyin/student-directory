@@ -12,6 +12,10 @@ def input_students
   puts "Now we have #{students.count} students"
   # get another name from the user
   name = gets.chomp
+  
+  if name.empty?
+    break
+  end
   end
  #return the array of students
   students
