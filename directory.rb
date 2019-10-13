@@ -36,6 +36,8 @@ students.each { |student|
 
        puts ("#{i}. #{student[:name]} (#{student[:cohort]} cohort) #{student[:hobbies]} #{student[:country_of_birth]} #{student[:height].center(4,"i")}")
       i += 1
+      elsif student[:name].empty?
+          puts "You haven't made an entry."
       end
     end
     }
@@ -67,6 +69,10 @@ name = gets.delete!("\n")
   # while the name is not empty, repeat this code.
   while true do
     
+        if name.empty?
+          students.delete("")
+          break
+        end
       
       #add the student hash to the array
       
@@ -82,9 +88,6 @@ name = gets.delete!("\n")
       cohort.to_sym
 
   
-        if name.empty?
-          break
-        end
   end
   #return the array of students
   students
@@ -97,6 +100,10 @@ def print_footer(names)
   elsif names.count == 1
     puts "Overall, we have #{names.count} great student"
     puts ""
+    elsif names.count == 0
+    puts "We're expecting our latest in-take. There are #{names.count} students"
+    puts ""
+    
   end
 end
 
@@ -104,4 +111,3 @@ students = input_students
 print_header
 print(students)
 print_footer(students)
-
